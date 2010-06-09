@@ -20,10 +20,10 @@ Now we can use it an example application.
     
     # At this point, you can access the Mongo::Database object using the 'mongo' helper:
     
-    puts mongo["testCollection"].insert {"name" => "MongoDB", "type" => "database", "count" => 1, "info" => {"x" => 203, "y" => '102'}}
+    puts mongo["testCollection"].insert({"name" => "MongoDB", "type" => "database", "count" => 1, "info" => {"x" => 203, "y" => '102'}})
     
     get '/' do
-      mongo["testCollection"].find_one
+      mongo["testCollection"].find_one.inspect
     end
 
 If you need to use authentication, you can specify this in the mongo uri:
